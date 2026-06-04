@@ -26,12 +26,12 @@
       <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#menu">Menu</a>
+        <a href="#menu">Order Online</a>
         <a href="#gallery">Gallery</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#visit">Visit Us</a>
         <a href="#contact">Contact</a>
-        <a href="#visit" class="nav-cta">Order Now</a>
+        <a href="#menu" class="nav-cta">Order Now</a>
       </nav>
 
       <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -54,7 +54,7 @@
           Come taste what Delhi has loved for nearly four decades.
         </p>
         <div class="hero-ctas">
-          <a href="#menu" class="btn btn-primary">Explore Menu</a>
+          <a href="#menu" class="btn btn-primary">Order Online</a>
           <a href="#visit" class="btn btn-outline">Visit Store</a>
         </div>
         <div class="hero-trust">
@@ -151,7 +151,7 @@
             <p>Layers of moist chocolate sponge, fresh cream, and cherries</p>
             <div class="product-price-row">
               <span class="product-price">from ₹430</span>
-              <a href="#menu" class="product-link">View Menu →</a>
+              <a href="#menu" class="product-link">Order Now →</a>
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@
             <p>Velvety truffle cream on a rich chocolate sponge base</p>
             <div class="product-price-row">
               <span class="product-price">₹70</span>
-              <a href="#menu" class="product-link">View Menu →</a>
+              <a href="#menu" class="product-link">Order Now →</a>
             </div>
           </div>
         </div>
@@ -181,7 +181,7 @@
             <p>Seasonal fruits, toasted almonds, and whipped cream delight</p>
             <div class="product-price-row">
               <span class="product-price">from ₹530</span>
-              <a href="#menu" class="product-link">View Menu →</a>
+              <a href="#menu" class="product-link">Order Now →</a>
             </div>
           </div>
         </div>
@@ -195,7 +195,7 @@
             <p>Caramel-kissed sponge with butterscotch cream frosting</p>
             <div class="product-price-row">
               <span class="product-price">from ₹430</span>
-              <a href="#menu" class="product-link">View Menu →</a>
+              <a href="#menu" class="product-link">Order Now →</a>
             </div>
           </div>
         </div>
@@ -210,7 +210,7 @@
             <p>Fudgy brownie drizzled with warm Belgian chocolate sauce</p>
             <div class="product-price-row">
               <span class="product-price">₹110</span>
-              <a href="#menu" class="product-link">View Menu →</a>
+              <a href="#menu" class="product-link">Order Now →</a>
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@
             <p>Our masterpiece — a showstopper for every grand celebration</p>
             <div class="product-price-row">
               <span class="product-price">from ₹1,200</span>
-              <a href="#menu" class="product-link">View Menu →</a>
+              <a href="#menu" class="product-link">Order Now →</a>
             </div>
           </div>
         </div>
@@ -233,30 +233,51 @@
     </div>
   </section>
 
-  <!-- ===== MENU SECTION ===== -->
-  <section class="menu" id="menu">
+  <!-- ===== ORDER ONLINE SECTION ===== -->
+  <section class="menu order-online" id="menu">
     <div class="container">
       <div class="section-header reveal">
-        <p class="section-eyebrow">Full Menu</p>
-        <h2 class="section-title">Everything We Bake</h2>
-        <p class="section-subtitle">Browse our complete collection — crafted fresh every single day</p>
+        <p class="section-eyebrow">Order Online</p>
+        <h2 class="section-title">Order Your Favorites</h2>
+        <p class="section-subtitle">Freshly baked cakes, pastries, breads, and snacks made daily.</p>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="menu-tabs reveal" role="tablist" aria-label="Menu categories">
-        <button class="menu-tab active" data-category="cakes" role="tab" aria-selected="true">Cakes</button>
-        <button class="menu-tab" data-category="pastries" role="tab" aria-selected="false">Pastries</button>
-        <button class="menu-tab" data-category="puddings" role="tab" aria-selected="false">Puddings</button>
-        <button class="menu-tab" data-category="snacks" role="tab" aria-selected="false">Snacks</button>
-        <button class="menu-tab" data-category="patties" role="tab" aria-selected="false">Fast Food</button>
-        <button class="menu-tab" data-category="breads" role="tab" aria-selected="false">Breads</button>
-        <button class="menu-tab" data-category="drycakes" role="tab" aria-selected="false">Dry Cakes</button>
-        <button class="menu-tab" data-category="gifts" role="tab" aria-selected="false">Gift Packs</button>
-        <button class="menu-tab" data-category="drinks" role="tab" aria-selected="false">Drinks</button>
+      <div class="order-controls reveal" aria-label="Order controls">
+        <div class="order-search-wrap">
+          <label for="orderSearch">Search bakery items</label>
+          <input type="search" id="orderSearch" placeholder="Search cakes, breads, snacks..." autocomplete="off" />
+        </div>
+
+        <div class="order-sort-wrap">
+          <label for="orderSort">Sort</label>
+          <select id="orderSort">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price Low to High</option>
+            <option value="price-desc">Price High to Low</option>
+            <option value="az">A-Z</option>
+          </select>
+        </div>
       </div>
 
-      <!-- Menu Items Container -->
-      <div class="menu-grid" id="menuGrid" aria-live="polite">
+      <div class="order-filters reveal" id="orderFilters" role="tablist" aria-label="Product categories">
+        <button class="order-filter active" type="button" data-category="all" role="tab" aria-selected="true">All</button>
+        <button class="order-filter" type="button" data-category="cakes" role="tab" aria-selected="false">Cakes</button>
+        <button class="order-filter" type="button" data-category="pastries" role="tab" aria-selected="false">Pastries</button>
+        <button class="order-filter" type="button" data-category="puddings" role="tab" aria-selected="false">Puddings &amp; Desserts</button>
+        <button class="order-filter" type="button" data-category="snacks" role="tab" aria-selected="false">Snacks</button>
+        <button class="order-filter" type="button" data-category="patties" role="tab" aria-selected="false">Patties &amp; Fast Food</button>
+        <button class="order-filter" type="button" data-category="breads" role="tab" aria-selected="false">Breads</button>
+        <button class="order-filter" type="button" data-category="drycakes" role="tab" aria-selected="false">Dry Cakes</button>
+        <button class="order-filter" type="button" data-category="gifts" role="tab" aria-selected="false">Gift Packs</button>
+        <button class="order-filter" type="button" data-category="drinks" role="tab" aria-selected="false">Drinks</button>
+      </div>
+
+      <div class="order-meta reveal">
+        <p id="orderProductCount">Showing all items</p>
+        <button class="cart-inline-btn" type="button" id="openCartInline">View Cart <span id="inlineCartCount">0</span></button>
+      </div>
+
+      <div class="order-grid" id="orderGrid" aria-live="polite">
         <!-- Populated by JavaScript -->
       </div>
     </div>
@@ -499,7 +520,7 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#menu">Full Menu</a></li>
+            <li><a href="#menu">Order Online</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -530,6 +551,39 @@
       </div>
     </div>
   </footer>
+
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer-header">
+      <div>
+        <p class="cart-kicker">Your Order</p>
+        <h3 id="cartDrawerTitle">Pastry Palace Cart</h3>
+      </div>
+      <button class="cart-close" id="closeCart" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <button class="btn btn-primary cart-checkout" id="checkoutCart" type="button">Order Cart on WhatsApp</button>
+    </div>
+  </aside>
+
+  <div class="quick-view" id="quickView" hidden role="dialog" aria-modal="true" aria-labelledby="quickViewTitle">
+    <div class="quick-view-backdrop" data-close-quick-view></div>
+    <div class="quick-view-panel">
+      <button class="quick-view-close" type="button" data-close-quick-view aria-label="Close quick view">×</button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <a class="floating-whatsapp" id="floatingWhatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat with Pastry Palace on WhatsApp">WhatsApp</a>
+  <button class="floating-cart" id="floatingCart" type="button" aria-label="Open cart">
+    Cart
+    <span id="floatingCartCount">0</span>
+  </button>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
