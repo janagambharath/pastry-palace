@@ -258,6 +258,64 @@ const productImageRules = [
   { test: /kesar|badam|milk/i, image: pexelsImage('10117396') },
 ];
 
+const productImageOverrides = {
+  'Black Forest Cake': pexelsImage('27911708'),
+  'Butterscotch Cake': pexelsImage('19651067'),
+  'Blueberry Cake': pexelsImage('19534490'),
+  'Fresh Fruit with Jelly Cake': pexelsImage('18613263'),
+  'Fresh Fruit with Almonds Cake': pexelsImage('18613263'),
+  'Chocolate Fresh Fruit Cake': pexelsImage('18613263'),
+  'Special Cake 1': pexelsImage('8101695'),
+  'Special Cake 2': pexelsImage('8101695'),
+
+  'Mango Pastry': pexelsImage('29143157'),
+  'Pineapple Pastry': pexelsImage('29143157'),
+  'Kiwi Pastry': pexelsImage('29143157'),
+  'Fresh Fruit Pastry': pexelsImage('33335365'),
+  'Blueberry Pastry': pexelsImage('29143157'),
+  'Black Forest Pastry': pexelsImage('27911708'),
+  'Chocolate Walnut Pastry': pexelsImage('16049572'),
+  'Chocolate Flakes Pastry': pexelsImage('16049572'),
+  'Chocolate Chips Pastry': pexelsImage('16049572'),
+  'Chocolate Mousse Pastry': pexelsImage('16049572'),
+  'Chocolate Truffle Pastry': pexelsImage('16049572'),
+
+  'Chocolate Fudge': pexelsImage('13215205'),
+  'Brownie with Chocolate Sauce': pexelsImage('13215205'),
+  'Black Forest Pudding': pexelsImage('27911708'),
+  'Fruit Pudding': pexelsImage('29143157'),
+  'Blueberry Pudding': pexelsImage('3450560'),
+
+  'Paneer Veggie Hot Dog': pexelsImage('25389018'),
+  'Chilli Paneer Hot Dog': pexelsImage('25389018'),
+  'Chicken Hot Dog': pexelsImage('23833913'),
+  'Veg Hot Dog': pexelsImage('25389018'),
+  'Paneer Tikka Hot Dog': pexelsImage('33430556'),
+  'Veg Sandwich': pexelsImage('1209029'),
+  'Veg Grill Sandwich': pexelsImage('1209029'),
+  'Chicken Grill Sandwich': pexelsImage('1209029'),
+  'Garlic Bread Slice': pexelsImage('10067617'),
+
+  'Garlic Bread': pexelsImage('10067617'),
+  'Cheese Bread': pexelsImage('27126839'),
+  'Burger Bun': pexelsImage('9394653'),
+  'Pav Bun': pexelsImage('9394653'),
+  'Atta Big Burger Bun': pexelsImage('9394653'),
+  'Hot Dog Buns': pexelsImage('9673517'),
+
+  'Fruit Cake (With Egg)': pexelsImage('18613263'),
+  'Fruit Cake (Without Egg)': pexelsImage('18613263'),
+  'Plain Vanilla Cake': pexelsImage('19651067'),
+  'Chocolate Cake': pexelsImage('27911708'),
+
+  'Butter Kaju Pista Gift Pack': pexelsImage('31746088'),
+  'Assorted Gift Pack': pexelsImage('31746088'),
+  'Kaju Pista Gift Pack': pexelsImage('31746088'),
+  'Fancy Chocolate Gift Pack': pexelsImage('31746088'),
+  'Special Kesar Badam Milk': pexelsImage('17379751'),
+  'Fruit Champagne': pexelsImage('18039760')
+};
+
 // ============================================================
 // DOM READY — Init all modules
 // ============================================================
@@ -589,7 +647,7 @@ function renderProductCard(product) {
   return `
     <article class="order-card" data-product-scope data-product-id="${product.id}">
       <div class="order-image-frame">
-        <img src="${product.image}" alt="${escapeHTML(product.name)}" loading="lazy" data-product-image />
+        <img src="${product.image}" alt="${escapeHTML(product.name)}" loading="eager" data-product-image />
         <div class="order-image-fallback">
           <span>Pastry Palace</span>
         </div>
@@ -906,6 +964,8 @@ function shouldShowOptionLine(item) {
 }
 
 function getProductImage(name, categoryKey, itemIndex) {
+  if (productImageOverrides[name]) return productImageOverrides[name];
+
   const rule = productImageRules.find(item => item.test.test(name));
   if (rule) return rule.image;
 
