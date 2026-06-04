@@ -137,7 +137,7 @@ const menuData = {
   }
 };
 
-const whatsappNumber = "919999999999";
+const whatsappNumber = "919212340001";
 
 const orderState = {
   products: [],
