@@ -143,7 +143,7 @@ const orderState = {
   products: [],
   cart: [],
   filters: {
-    category: 'all',
+    category: 'cakes',
     search: '',
     sort: 'featured'
   }
@@ -473,7 +473,7 @@ function bindOrderControls() {
       });
       filter.classList.add('active');
       filter.setAttribute('aria-selected', 'true');
-      orderState.filters.category = filter.dataset.category || 'all';
+      orderState.filters.category = filter.dataset.category || 'cakes';
       renderProducts();
     });
   });
@@ -630,7 +630,7 @@ function renderProducts() {
 function getVisibleProducts() {
   const { category, search, sort } = orderState.filters;
   const filtered = orderState.products.filter((product) => {
-    const matchesCategory = category === 'all' || product.categoryKey === category;
+    const matchesCategory = product.categoryKey === category;
     const matchesSearch = !search || `${product.name} ${product.categoryLabel} ${product.description}`.toLowerCase().includes(search);
     return matchesCategory && matchesSearch;
   });
@@ -887,7 +887,7 @@ function closeQuickView() {
 
 function buildSingleProductMessage(selection) {
   const lines = [
-    'Hello Pastry Palace 👋',
+    'Hello Pastry Palace',
     '',
     'I would like to order:',
     '',
@@ -911,7 +911,7 @@ function buildSingleProductMessage(selection) {
 
 function buildCartMessage() {
   const lines = [
-    'Hello Pastry Palace 👋',
+    'Hello Pastry Palace',
     '',
     'I would like to order:',
     ''
@@ -942,7 +942,7 @@ function setFloatingWhatsappLink() {
   if (!floatingWhatsapp) return;
 
   const message = [
-    'Hello Pastry Palace 👋',
+    'Hello Pastry Palace',
     '',
     'I would like to place an order.',
     'Please share availability.'
